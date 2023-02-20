@@ -52,7 +52,7 @@ remocon が紹介されている
 
 Remote Config のパラメーターを YAML で管理できる
 
-現在は動作しない
+私が試した限りでは動作しなかった
 Remote Config の機能追加・仕様変更に remocon が対応していないと思われる
 
 # ツールを作る
@@ -80,6 +80,32 @@ Remote Config の機能追加・仕様変更に remocon が対応していない
 
 - Node.js 製
   - `firebase-admin` SDK を利用
+  
+### カンペ
+
+```bash
+# 初期化
+node index.mjs checkout
+
+# 設定値を追加
+vim parameters/new
+
+# Firebase上との差分確認
+node index.mjs diff
+
+# Firebaseに登録
+node index.mjs publish
+
+# defaults を取得
+node index.mjs download
+
+# validate
+node index.mjs validate
+```
+
+## 課題
+
+- conditions の管理ができていない
   
 # 聞きたいこと
 
